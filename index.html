@@ -31,6 +31,8 @@
                 {{message}} -{{index}}-{{item.message}}
             </li>
         </ul>
+        <p>原消息:{{message}}</p>
+        <p>新消息:{{newMessage}}</p>
     </div>
 
 </body>
@@ -85,7 +87,12 @@
         },
         destroyed: function () {
             console.log('destoryed')
-        }
+        },
+        computed: {
+            newMessage: function{
+                return this.message.reverse()
+            }
+        },  
     })
 </script>
 
