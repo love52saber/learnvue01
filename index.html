@@ -32,7 +32,7 @@
             </li>
         </ul>
         <p>原消息:{{message}}</p>
-        <p>新消息:{{newMessage}}</p>
+        <p>原消息:{{newMessage}}</p> 
     </div>
 
 </body>
@@ -89,10 +89,13 @@
             console.log('destoryed')
         },
         computed: {
-            newMessage: function{
-                return this.message.reverse()
+            newMessage: function() {
+                console.log(1)
+                console.log(typeof this.message)
+                // console.log(this.message instanceof String)
+                return this.message.split('').reverse().join('')
             }
-        },  
+        }  
     })
 </script>
 
