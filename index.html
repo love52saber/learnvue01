@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world'
+        },
+        beforeCreate: function () {
+            console.log('beforeCreate')
+        },
+        created: function () {
+            console.log('created')
+        },
+        beforeMount: function () {
+            console.log(this.$refs.a)
+            // 上面的你会看到undefined,因为数据还没绑定上
+            console.log('beforeMount')
+        },
+        mounted: function () {
+            console.log(this.$refs.a)
+            // 上面的你会看到p,因为数据绑定上了
+            console.log('mounted')
+        },
+        beforeUpdate: function () {
+            console.log('beforeUpdate')
+        },
+        updated: function () {
+            console.log('updated')
+        },
+        beforeDestroy: function () {
+            console.log('beforeDestory')
+        },
+        destroyed: function () {
+            console.log('destoryed')
+        }
+    })
+</script>
+
+</html>
