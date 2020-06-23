@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <my-component></my-component>
+        <my-component-demo></my-component-demo>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('my-component', {
+        template: '<div><span>我的模板A</span></div>'
+    })
+    Vue.component('my-component-demo', { // 这个是用来测试第二种命名法定义组件的，首字母大写时要写在字符串模板中才能显示（不然显示不了）
+        template: '<MyComponentB></MyComponentB>'
+    })
+    Vue.component('MyComponentB', {
+        template: '<div><span>我的模板B</span></div>'
+    })
+    var vm = new Vue({
+        el: '#app'
+    })
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<body>
+    <div id="app">
+        <div v-bind:class="{ active: isActive }">haha</div>
+        <div :class="classObj">hhh</div>
+    </div>
+
+</body>
+<script>
+    let vue = new Vue({
+        el: '#app',
+        data: {
+            // 影响着active这个class是否出现
+            isActive: false,
+            classObj: {
+                active: this.isActive
+            }
+        },
+    })
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <my-template></my-template>
+        <my-template></my-template>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('my-template', { // 第一个参数是组件名，第二个参数是模板的内容
+        template: '<div><span>我的模板</span></div>'
+    })
+    var vm = new Vue({
+        el: '#app'
+    })
+</script>
+</html>
